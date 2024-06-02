@@ -51,6 +51,8 @@ const AddBlog = () => {
         />
       </div>
       <button onClick={handleSave}>Submit</button>
+
+      <div dangerouslySetInnerHTML={{ __html: description }} />
     </div>
   );
 };
