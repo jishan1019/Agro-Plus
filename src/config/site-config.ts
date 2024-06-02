@@ -1,7 +1,22 @@
-export const title = "Agro Pulse Blog";
-export const fullTitle = "Farmers Blogs - Fine farmer best solution";
-export const tagLine = "The Finest Blogs in the world";
-export const tagLine2 = "Generate idea for creating farmers";
+export const title = "AgroPulseBlog";
+export const fullTitle =
+  "AgroPulseBlog - Insights and Updates on Farming | YourCity";
+
+export const tagLine = "Stay Updated with the Latest Farming Insights";
+export const tagLine2 = "Explore Tips, Trends, and News on Agriculture";
+
 export const description =
-  "Integrate diversity on your farm. Having different products in your farm ensures stability, sustainability, richer soil, enhance profits.";
-export const keywords = ["Farmers Blogs"];
+  "Stay informed with AgroPulseBlog, your ultimate source for farming insights. Explore expert advice, tips, and the latest trends in crop cultivation, livestock farming, agricultural technology, sustainable farming, and market trends to enhance your agricultural practices and boost your productivity.";
+
+export const keywords = [
+  "AgroPulseBlog",
+  "farming insights",
+  "agricultural trends",
+  "crop cultivation",
+  "livestock farming",
+  "agricultural technology",
+  "sustainable farming",
+  "market trends",
+  "YourCity agriculture",
+  "agriculture blog",
+];

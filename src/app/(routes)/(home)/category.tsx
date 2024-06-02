@@ -25,7 +25,7 @@ export default function Category() {
   return (
     <div>
       this is category
-      <ul className="p-5 space-y-3">
+      {/* <ul className="p-5 space-y-3">
         {data?.map((blog: TBlogs, index) => (
           <li key={index}>
             <p className="text-red-500">title: {blog?.title}</p>
@@ -33,7 +33,7 @@ export default function Category() {
             <p className="text-blue-500">Description: {blog?.body}</p>
           </li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   );
 }

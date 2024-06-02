@@ -78,6 +78,11 @@ body {
   overflow-x: hidden !important;
 }
 
+/* Editor Height */
+.ql-editor {
+  min-height: 200px !important;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
