@@ -1,4 +1,4 @@
-export const title = "Farmers Blogs";
+export const title = "Agro Pulse Blog";
 export const fullTitle = "Farmers Blogs - Fine farmer best solution";
 export const tagLine = "The Finest Blogs in the world";
 export const tagLine2 = "Generate idea for creating farmers";

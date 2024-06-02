@@ -15,7 +15,7 @@ const fontSans = FontSans({
 });
 
 export async function generateMetadata(): Promise<Metadata> {
-  const BASE_URL = await getBaseURL();
+  const BASE_URL = getBaseURL();
 
   return {
     metadataBase: new URL(BASE_URL),
