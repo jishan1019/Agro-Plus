@@ -1,0 +1,42 @@
+[
+    {
+      "id": 1,
+      "categoryId": 1,
+      "categoryName": "Crop Cultivation",
+      "itemTitle": "Understanding Crop Rotation",
+      "itemImg": "https://example.com/images/crop_rotation.jpg",
+      "itemDescription": "Crop rotation is the practice of growing different types of crops in the same area in sequential seasons. It helps improve soil health, reduce pests and diseases, and increase crop yield."
+    },
+    {
+      "id": 2,
+      "categoryId": 1,
+      "categoryName": "Crop Cultivation",
+      "itemTitle": "Effective Pest Management",
+      "itemImg": "https://example.com/images/pest_management.jpg",
+      "itemDescription": "Pest management involves techniques to control and eliminate harmful pests in crops. Methods include biological control, chemical pesticides, and integrated pest management (IPM) strategies."
+    },
+    {
+      "id": 3,
+      "categoryId": 1,
+      "categoryName": "Crop Cultivation",
+      "itemTitle": "Best Practices for Irrigation",
+      "itemImg": "https://example.com/images/irrigation.jpg",
+      "itemDescription": "Efficient irrigation practices are crucial for maintaining soil moisture and ensuring healthy crop growth. Techniques include drip irrigation, sprinkler systems, and surface irrigation."
+    },
+    {
+      "id": 4,
+      "categoryId": 1,
+      "categoryName": "Crop Cultivation",
+      "itemTitle": "Soil Fertility Management",
+      "itemImg": "https://example.com/images/soil_fertility.jpg",
+      "itemDescription": "Maintaining soil fertility involves adding organic matter, using fertilizers, and practicing crop rotation to ensure the soil remains productive and capable of supporting healthy crops."
+    },
+    {
+      "id": 5,
+      "categoryId": 1,
+      "categoryName": "Crop Cultivation",
+      "itemTitle": "Harvesting Techniques for Maximum Yield",
+      "itemImg": "https://example.com/images/harvesting.jpg",
+      "itemDescription": "Proper harvesting techniques are essential for maximizing crop yield and quality. This includes knowing the right time to harvest and using appropriate tools and methods."
+    }
+  ]
