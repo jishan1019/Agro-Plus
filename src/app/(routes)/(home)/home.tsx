@@ -6,10 +6,13 @@ import Cover from "./cover";
 
 export default function HomePage() {
   return (
-    <Header>
-      <Cover />
-      <Category />
+    <>
+      <Header />
+      <div className="min-h-[calc(100vh-120px)]">
+        <Cover />
+        <Category />
+      </div>
       <Footer className="mt-24 sm:mt-96" />
-    </Header>
+    </>
   );
 }

@@ -1,21 +1,31 @@
 import { ModeToggle } from "@/components/mode-toggle";
 import { Config } from "@/config";
 import { MdKeyboardArrowDown } from "@/constant";
-import { navLinks } from "@/utils";
+import { TNavLink } from "@/types/nav.type";
+import { categories, navLinks } from "@/utils";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 import React, { ReactNode, useState } from "react";
 
-export default function Header({ children }: { children: ReactNode }) {
+export default function Header() {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [activeCategory, setActiveCategory] = useState<string>("Home");
+  const router = useRouter();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
   const handelItemClick = (item: string) => {
+    setMenuOpen(false);
+    router.push(`?category=${item}`);
+  };
+
+  const handelMenuClick = (item: string) => {
     setActiveCategory(item);
+    if (item !== "Categories") {
+      setMenuOpen(false);
+    }
   };
 
   return (
@@ -26,7 +36,7 @@ export default function Header({ children }: { children: ReactNode }) {
             <Link href="/">
               <p className="flex items-center">
                 <span className="self-center text-xl font-semibold whitespace-nowrap">
-                  {Config.title}
+                  {Config?.title}
                 </span>
               </p>
             </Link>
@@ -67,20 +77,21 @@ export default function Header({ children }: { children: ReactNode }) {
               id="mobile-menu"
             >
               <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:items-center">
-                {navLinks?.map((item, index) => (
+                {navLinks?.map((item: TNavLink) => (
                   <li
-                    className={`${
-                      activeCategory === item.name
-                        ? "bg-primary text-white md:text-black md:border-b md:border-primary md:bg-transparent"
-                        : ""
-                    }`}
-                    key={item.name}
-                    onClick={() => handelItemClick(item.name)}
+                    className="relative cursor-pointer"
+                    key={item?.name}
+                    onClick={() => {
+                      handelMenuClick(item?.name);
+                    }}
                   >
-                    <Link href={item.href}>
-                      <p
-                        className="py-2 pr-4 pl-3 rounded md:bg-transparent md:p-0 border-b md:border-b-0 text-sm inline-flex items-center gap-1"
-                        aria-current="page"
+                    <p aria-current="page">
+                      <span
+                        className={` inline-flex items-center gap-1 py-2 px-3 md:p-0 ${
+                          activeCategory === item?.name
+                            ? "bg-primary text-white md:text-black md:border-b md:border-primary md:bg-transparent w-full"
+                            : ""
+                        }`}
                       >
                         {item.name}
                         {item.name === "Categories" && (
@@ -88,8 +99,23 @@ export default function Header({ children }: { children: ReactNode }) {
                             <MdKeyboardArrowDown className="mt-[2px]" />
                           </span>
                         )}
-                      </p>
-                    </Link>
+                      </span>
+
+                      <span className=" md:block md:absolute mt-4 shadow-md bg-background dark:bg-secondary w-56">
+                        {activeCategory === "Categories" &&
+                          item.name === "Categories" &&
+                          categories?.map((category: TNavLink, index) => (
+                            <p
+                              className="w-full  py-2  pl-6 md:px-3 border-b cursor-pointer hover:bg-primary 
+                              hover:text-white transition-all duration-300"
+                              key={index}
+                              onClick={() => handelItemClick(category?.name)}
+                            >
+                              {category?.name}
+                            </p>
+                          ))}
+                      </span>
+                    </p>
                   </li>
                 ))}
 
@@ -101,8 +127,6 @@ export default function Header({ children }: { children: ReactNode }) {
           </div>
         </nav>
       </header>
-
-      <main>{children}</main>
     </>
   );
 }
