@@ -1,26 +1,26 @@
 [
     {
-      "id": 1,
+      "_id": "1",
       "categoryName": "Crop Cultivation",
       "categoryDescription": "Tips and techniques for growing various crops, including best practices and pest management."
     },
     {
-      "id": 2,
+      "_id": "2",
       "categoryName": "Livestock Farming",
       "categoryDescription": "Advice on raising livestock, animal health, breeding techniques, and sustainable practices."
     },
     {
-      "id": 3,
+      "_id": "3",
       "categoryName": "Agricultural Technology",
       "categoryDescription": "Latest updates on farming technology, tools, machinery, and innovative agricultural practices."
     },
     {
-      "id": 4,
+      "_id": "4",
       "categoryName": "Sustainable Farming",
       "categoryDescription": "Eco-friendly farming methods, organic farming, soil health, and sustainable agriculture practices."
     },
     {
-      "id": 5,
+      "_id": "5",
       "categoryName": "Market Trends",
       "categoryDescription": "Information on agricultural market trends, commodity prices, export opportunities, and financial advice."
     }

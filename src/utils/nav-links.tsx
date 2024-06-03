@@ -1,3 +1,5 @@
+import { Data } from "@/constant";
+
 export const navLinks = [
   {
     name: "Home",
@@ -17,21 +19,6 @@ export const navLinks = [
   },
 ];
 
-export const categories = [
-  {
-    name: "Crop Cultivation",
-    href: "/",
-  },
-  {
-    name: "Livestock Farming",
-    href: "#",
-  },
-  {
-    name: "Agricultural Technology",
-    href: "/#blogs",
-  },
-  {
-    name: "Sustainable Farming",
-    href: "/about",
-  },
-];
+export const categories = Data.categoryData?.map(
+  (category) => category?.categoryName
+);

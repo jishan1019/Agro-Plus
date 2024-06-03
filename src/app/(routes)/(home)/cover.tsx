@@ -21,7 +21,7 @@ export default function Cover() {
           {Config.tagLine}
         </h3>
         <h5 className="text-white font-bold text-[9px] md:text-lg mt-4 uppercase">
-          {Config.tagLine}
+          {Config.tagLine2}
         </h5>
 
         <Button className="rounded-full hover:bg-transparent hover:border hover:border-primary transition-all duration-300 mt-6">

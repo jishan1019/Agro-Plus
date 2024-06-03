@@ -103,15 +103,15 @@ export default function Header() {
 
                       <span className=" md:block md:absolute md:z-50 mt-4 shadow-md bg-background dark:bg-secondary w-56">
                         {activeCategory === "Categories" &&
-                          item.name === "Categories" &&
-                          categories?.map((category: TNavLink, index) => (
+                          item?.name === "Categories" &&
+                          categories?.map((category, index) => (
                             <p
-                              className="w-full text-white md:text-black py-2  pl-6 md:px-3 border-b cursor-pointer hover:bg-primary 
+                              className="w-full text-white md:text-black md:dark:text-white py-2  pl-6 md:px-3 border-b cursor-pointer hover:bg-primary 
                               hover:text-white transition-all duration-300"
                               key={index}
-                              onClick={() => handelItemClick(category?.name)}
+                              onClick={() => handelItemClick(category)}
                             >
-                              {category?.name}
+                              {category}
                             </p>
                           ))}
                       </span>
