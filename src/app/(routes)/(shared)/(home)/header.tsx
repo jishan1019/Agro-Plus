@@ -31,7 +31,7 @@ export default function Header() {
   return (
     <>
       <header>
-        <nav className="bg-background dark:bg-secondary border px-2 md:px-6 py-2.5 md:py-6 rounded shadow">
+        <nav className="bg-secondary text-white dark:border px-2 md:px-6 py-2.5 md:py-6 shadow-md">
           <div className=" flex flex-wrap justify-between items-center mx-auto">
             <Link href="/">
               <p className="flex items-center">
@@ -89,7 +89,7 @@ export default function Header() {
                       <span
                         className={` inline-flex items-center gap-1 py-2 px-3 md:p-0 ${
                           activeCategory === item?.name
-                            ? "bg-primary text-white md:text-black md:border-b md:border-primary md:bg-transparent w-full"
+                            ? "bg-primary md:border-b md:border-primary md:bg-transparent w-full"
                             : ""
                         }`}
                       >
@@ -106,7 +106,7 @@ export default function Header() {
                           item.name === "Categories" &&
                           categories?.map((category: TNavLink, index) => (
                             <p
-                              className="w-full  py-2  pl-6 md:px-3 border-b cursor-pointer hover:bg-primary 
+                              className="w-full text-black dark:text-white py-2  pl-6 md:px-3 border-b cursor-pointer hover:bg-primary 
                               hover:text-white transition-all duration-300"
                               key={index}
                               onClick={() => handelItemClick(category?.name)}

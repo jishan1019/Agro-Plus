@@ -12,7 +12,7 @@ export default function HomePage() {
         <Cover />
         <Category />
       </div>
-      <Footer className="mt-24 sm:mt-96" />
+      <Footer />
     </>
   );
 }
