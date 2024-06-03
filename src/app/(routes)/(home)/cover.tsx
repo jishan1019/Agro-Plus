@@ -1,23 +1,32 @@
+import { Button } from "@/components/ui/button";
+import { Config } from "@/config";
 import { Images } from "@/constant";
 import React from "react";
 
 export default function Cover() {
   return (
-    <div>
-      <div
-        className="relative h-[30vh] md:h-[80vh] bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${Images.CoverImg.src})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed",
-        }}
-      >
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="relative z-10 flex items-center justify-center h-full">
-          <h1 className="text-white text-4xl">Your Cover Section</h1>
-        </div>
+    <div
+      className="relative h-[30vh] md:h-[80vh] bg-cover bg-center"
+      style={{
+        backgroundImage: `url(${Images.CoverImg.src})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
+      }}
+    >
+      <div className="absolute inset-0 bg-black opacity-50"></div>
+      <div className="relative z-10 flex items-center justify-center flex-col h-full">
+        <h3 className="text-white font-bold text-[11px] md:text-3xl uppercase">
+          {Config.tagLine}
+        </h3>
+        <h5 className="text-white font-bold text-[9px] md:text-lg mt-4 uppercase">
+          {Config.tagLine}
+        </h5>
+
+        <Button className="rounded-full hover:bg-transparent hover:border hover:border-primary transition-all duration-300 mt-6">
+          Read Blogs
+        </Button>
       </div>
     </div>
   );

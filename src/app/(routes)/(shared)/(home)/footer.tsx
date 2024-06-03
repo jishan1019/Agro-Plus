@@ -12,10 +12,12 @@ export default function Footer() {
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
             <div className="sm:col-span-2">
               <div className=" mt-6 space-y-3 md:space-y-0">
-                <h1 className="font-bold text-lg md:text-xl ">
-                  {Config.title}
-                </h1>
-                <p className="text-xs md:text-sm mt-1">{Config.fullTitle}</p>
+                <Link href="/">
+                  <h1 className="font-bold text-lg md:text-xl ">
+                    {Config.title}
+                  </h1>
+                </Link>
+                <p className="text-xs pt-2 max-w-72">{Config.description}</p>
               </div>
             </div>
 
