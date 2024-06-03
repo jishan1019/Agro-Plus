@@ -12,8 +12,10 @@ export default function Footer() {
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
             <div className="sm:col-span-2">
               <div className=" mt-6 space-y-3 md:space-y-0">
-                <h1 className="font-bold text-2xl">{Config.title}</h1>
-                <p className="text-sm mt-1">{Config.fullTitle}</p>
+                <h1 className="font-bold text-lg md:text-xl ">
+                  {Config.title}
+                </h1>
+                <p className="text-xs md:text-sm mt-1">{Config.fullTitle}</p>
               </div>
             </div>
 
@@ -51,7 +53,7 @@ export default function Footer() {
           <hr className="my-6 border border-primary" />
 
           <div className="flex items-center justify-between flex-col text-center gap-3 md:flex-row text-sm">
-            <p className="text-white">
+            <p className="text-white text-xs md:text-sm">
               Copyright © 2024 - All right reserved by {Config.title}.
             </p>
 

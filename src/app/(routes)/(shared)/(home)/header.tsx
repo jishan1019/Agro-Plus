@@ -35,7 +35,7 @@ export default function Header() {
           <div className=" flex flex-wrap justify-between items-center mx-auto">
             <Link href="/">
               <p className="flex items-center">
-                <span className="self-center text-xl font-semibold whitespace-nowrap">
+                <span className="self-center text-sm md:text-xl font-semibold whitespace-nowrap">
                   {Config?.title}
                 </span>
               </p>
@@ -101,12 +101,12 @@ export default function Header() {
                         )}
                       </span>
 
-                      <span className=" md:block md:absolute mt-4 shadow-md bg-background dark:bg-secondary w-56">
+                      <span className=" md:block md:absolute md:z-50 mt-4 shadow-md bg-background dark:bg-secondary w-56">
                         {activeCategory === "Categories" &&
                           item.name === "Categories" &&
                           categories?.map((category: TNavLink, index) => (
                             <p
-                              className="w-full text-black dark:text-white py-2  pl-6 md:px-3 border-b cursor-pointer hover:bg-primary 
+                              className="w-full text-white md:text-black py-2  pl-6 md:px-3 border-b cursor-pointer hover:bg-primary 
                               hover:text-white transition-all duration-300"
                               key={index}
                               onClick={() => handelItemClick(category?.name)}
