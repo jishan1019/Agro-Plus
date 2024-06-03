@@ -4,23 +4,15 @@ export const navLinks = [
     href: "/",
   },
   {
-    name: "Crop Cultivation",
+    name: "Categories",
+    href: "#",
+  },
+  {
+    name: "Blogs",
+    href: "/#blogs",
+  },
+  {
+    name: "About Us",
     href: "/about",
-  },
-  {
-    name: "Livestock Farming",
-    href: "/menu",
-  },
-  {
-    name: "Agricultural Technology",
-    href: "/services",
-  },
-  {
-    name: "Sustainable Farming",
-    href: "#",
-  },
-  {
-    name: "Market Trends",
-    href: "#",
   },
 ];

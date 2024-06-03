@@ -1,14 +1,21 @@
 import { ModeToggle } from "@/components/mode-toggle";
 import { Config } from "@/config";
+import { MdKeyboardArrowDown } from "@/constant";
 import { navLinks } from "@/utils";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { ReactNode, useState } from "react";
 
 export default function Header({ children }: { children: ReactNode }) {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const [activeCategory, setActiveCategory] = useState<string>("Home");
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const handelItemClick = (item: string) => {
+    setActiveCategory(item);
   };
 
   return (
@@ -61,13 +68,26 @@ export default function Header({ children }: { children: ReactNode }) {
             >
               <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:items-center">
                 {navLinks?.map((item, index) => (
-                  <li key={item.name}>
+                  <li
+                    className={`${
+                      activeCategory === item.name
+                        ? "bg-primary text-white md:text-black md:border-b md:border-primary md:bg-transparent"
+                        : ""
+                    }`}
+                    key={item.name}
+                    onClick={() => handelItemClick(item.name)}
+                  >
                     <Link href={item.href}>
                       <p
-                        className="block py-2 pr-4 pl-3 rounded md:bg-transparent md:p-0 border-b md:border-b-0 text-sm"
+                        className="py-2 pr-4 pl-3 rounded md:bg-transparent md:p-0 border-b md:border-b-0 text-sm inline-flex items-center gap-1"
                         aria-current="page"
                       >
                         {item.name}
+                        {item.name === "Categories" && (
+                          <span>
+                            <MdKeyboardArrowDown className="mt-[2px]" />
+                          </span>
+                        )}
                       </p>
                     </Link>
                   </li>
