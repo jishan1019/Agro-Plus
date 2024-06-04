@@ -83,20 +83,20 @@ export default function Blogs() {
         </p>
       </header>
 
-      <main className="grid grid-cols-3 gap-4 my-8">
+      <main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-8">
         {currentData?.map((blog: TBlog) => (
           <div
             key={blog.blogId}
             className="flex flex-col items-center shadow-lg hover:border hover:border-primary transition-all duration-300 rounded-md bg-background dark:bg-secondary"
           >
-            <div className="py-5">
+            <div className="py-5 px-4">
               <img
                 src={blog.itemImg || "https://i.ibb.co/Zx2GMKS/image.png"}
                 alt={blog.itemTitle}
                 className="object-cover w-full h-[170px] rounded-md bg-muted p-3"
               />
 
-              <h3 className="font-bold text-xl md:text-xl mt-2">
+              <h3 className="font-bold text-lg md:text-xl mt-2">
                 {blog?.itemTitle}
               </h3>
 
@@ -156,11 +156,11 @@ export default function Blogs() {
               <PaginationLink isActive>{currentPage}</PaginationLink>
             </PaginationItem>
 
-            {currentPage + 1 !== getBlogs?.length && (
+            {/* {currentPage + 1 !== getBlogs?.length && (
               <PaginationItem>
                 <PaginationLink>{currentPage + 1}</PaginationLink>
               </PaginationItem>
-            )}
+            )} */}
 
             <PaginationItem>
               <PaginationEllipsis />

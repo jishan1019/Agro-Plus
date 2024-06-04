@@ -9,6 +9,7 @@ import NotFoundImg from "@/assets/img/not-found.webp";
 import { categories } from "@/utils";
 import Loading from "@/components/loader";
 import toast from "react-hot-toast";
+import AddBlog from "../(home)/add-blog";
 
 export default function BlogDetailsHome() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -52,6 +53,8 @@ export default function BlogDetailsHome() {
 
   return (
     <>
+      {/* <AddBlog /> */}
+
       {blogData ? (
         <>
           <main className="grid grid-cols-12 gap-6 mt-6 mb-16 w-[95%]  md:w-[80%] mx-auto">

@@ -53,6 +53,7 @@ const AddBlog = () => {
       <button onClick={handleSave}>Submit</button>
 
       <div dangerouslySetInnerHTML={{ __html: description }} />
+      <div className="mt-8">{description}</div>
     </div>
   );
 };
