@@ -6,6 +6,7 @@ import {
   tagLine2,
   description,
   keywords,
+  contactEmail,
 } from "./site-config";
 
 export const Config = {
@@ -17,4 +18,5 @@ export const Config = {
   tagLine2,
   description,
   keywords,
+  contactEmail,
 };

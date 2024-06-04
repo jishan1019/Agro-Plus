@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { CiHeart } from "@/constant/icons";
 import { useSearchParams } from "next/navigation";
 import { useGetAllBlogsInCategory, useGetCategory } from "@/hooks/useFetchData";
@@ -7,9 +7,22 @@ import { TBlog } from "@/types";
 import Loading from "@/components/loader";
 import { Button } from "@/components/ui/button";
 
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
+
 export default function Blogs() {
   const searchParams = useSearchParams();
   const search = searchParams.get("category");
+
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const itemsPerPage = 2;
 
   const getSingleCategory = useGetCategory(search || "Crop Cultivation");
 
@@ -26,6 +39,14 @@ export default function Blogs() {
 
   // Call the hook with the determined parameter
   const getBlogs = useGetAllBlogsInCategory(categoryIndex);
+
+  const handlePageChange = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+  };
+
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = Math.min(startIndex + itemsPerPage, getBlogs?.length);
+  const currentData = getBlogs?.slice(startIndex, endIndex);
 
   if (!getSingleCategory || !getBlogs?.length) {
     return (
@@ -58,7 +79,7 @@ export default function Blogs() {
       </header>
 
       <main className="grid grid-cols-3 gap-4 my-8">
-        {getBlogs?.map((blog: TBlog) => (
+        {currentData?.map((blog: TBlog) => (
           <div
             key={blog.blogId}
             className="flex flex-col items-center shadow-lg hover:border hover:border-primary transition-all duration-300 rounded-md bg-background dark:bg-secondary"
@@ -90,14 +111,69 @@ export default function Blogs() {
               </p>
 
               <Button className="rounded-full hover:bg-transparent hover:border hover:border-primary transition-all duration-300 mt-6 hover:text-black dark:text-white">
-                Read More..
+                Read More
               </Button>
             </div>
           </div>
         ))}
       </main>
 
-      <footer></footer>
+      <footer>
+        <Pagination
+          currentPage={currentPage}
+          itemsPerPage={itemsPerPage}
+          onPageChange={handlePageChange} // Pass the handlePageChange function
+          totalItems={getBlogs?.length}
+        >
+          <PaginationContent>
+            <PaginationItem>
+              {currentPage == 1 ? (
+                <PaginationPrevious
+                  isActive={false}
+                  className="cursor-not-allowed"
+                />
+              ) : (
+                <PaginationPrevious
+                  className="cursor-pointer"
+                  onClick={() => handlePageChange(currentPage - 1)}
+                />
+              )}
+            </PaginationItem>
+            {/* Pagination links will be generated automatically */}
+            <PaginationItem>
+              <PaginationLink isActive>{currentPage}</PaginationLink>
+            </PaginationItem>
+
+            {currentPage + 1 !== getBlogs?.length && (
+              <PaginationItem>
+                <PaginationLink>{currentPage + 1}</PaginationLink>
+              </PaginationItem>
+            )}
+
+            <PaginationItem>
+              <PaginationEllipsis />
+            </PaginationItem>
+
+            <PaginationItem>
+              <PaginationLink isActive>{getBlogs?.length - 1}</PaginationLink>
+            </PaginationItem>
+
+            <PaginationItem>
+              {currentPage + 1 === getBlogs?.length ? (
+                <PaginationNext
+                  isActive={false}
+                  className="cursor-not-allowed"
+                /> // Disable Next button if current page is the last page
+              ) : (
+                <PaginationNext
+                  className="cursor-pointer"
+                  onClick={() => handlePageChange(currentPage + 1)}
+                />
+              )}
+            </PaginationItem>
+          </PaginationContent>
+        </Pagination>
+      </footer>
     </div>
   );
 }

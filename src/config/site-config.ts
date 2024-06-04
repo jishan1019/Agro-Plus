@@ -20,3 +20,5 @@ export const keywords = [
   "YourCity agriculture",
   "agriculture blog",
 ];
+
+export const contactEmail = "s@gmail.com";
