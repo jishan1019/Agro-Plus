@@ -1,14 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Config } from "@/config";
-import { Images } from "@/constant";
 import React from "react";
+import CoverImg from "@/assets/img/cover.jpg";
 
 export default function Cover() {
   return (
     <div
       className="relative h-[30vh] md:h-[80vh] bg-cover bg-center"
       style={{
-        backgroundImage: `url(${Images.CoverImg.src})`,
+        backgroundImage: `url(${CoverImg.src})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

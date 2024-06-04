@@ -19,12 +19,14 @@ export default function Header() {
   const handelItemClick = (item: string) => {
     setMenuOpen(false);
     router.push(`?category=${item}`);
+    router.refresh();
   };
 
-  const handelMenuClick = (item: string) => {
+  const handelMenuClick = (item: string, href: string) => {
     setActiveCategory(item);
     if (item !== "Categories") {
       setMenuOpen(false);
+      router.push(`${href}`);
     }
   };
 
@@ -82,12 +84,12 @@ export default function Header() {
                     className="relative cursor-pointer"
                     key={item?.name}
                     onClick={() => {
-                      handelMenuClick(item?.name);
+                      handelMenuClick(item?.name, item?.href);
                     }}
                   >
                     <p aria-current="page">
                       <span
-                        className={` inline-flex items-center gap-1 py-2 px-3 md:p-0 ${
+                        className={`inline-flex items-center gap-1 py-2 px-3 md:p-0 ${
                           activeCategory === item?.name
                             ? "bg-primary md:border-b md:border-primary md:bg-transparent w-full"
                             : ""

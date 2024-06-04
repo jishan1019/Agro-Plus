@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { getBaseURL } from "@/utils";
 import { Config } from "@/config";

@@ -26,11 +26,11 @@ export default function Footer() {
               <div className="flex flex-col items-start mt-5 space-y-2 text-white/70 text-sm">
                 {FooterQuickLink?.map((item: TNavLink) => (
                   <Link
-                    key={item.name}
-                    href={item.href as string}
+                    key={item?.name}
+                    href={item?.href as string}
                     className="transition-colors duration-300  hover:underline hover:text-primary"
                   >
-                    {item.name}
+                    {item?.name}
                   </Link>
                 ))}
               </div>
@@ -41,11 +41,11 @@ export default function Footer() {
               <div className="flex flex-col items-start mt-5 space-y-2 text-white/70 text-sm">
                 {FooterAboutLink?.map((item: TNavLink) => (
                   <Link
-                    key={item.name}
-                    href={item.href as string}
+                    key={item?.name}
+                    href={item?.href as string}
                     className="transition-colors duration-300  hover:underline hover:text-primary"
                   >
-                    {item.name}
+                    {item?.name}
                   </Link>
                 ))}
               </div>

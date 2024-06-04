@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { CiHeart } from "@/constant/icons";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useGetAllBlogsInCategory, useGetCategory } from "@/hooks/useFetchData";
 import Image from "next/image";
 import { TBlog } from "@/types";
@@ -20,9 +20,10 @@ import {
 export default function Blogs() {
   const searchParams = useSearchParams();
   const search = searchParams.get("category");
+  const router = useRouter();
 
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const itemsPerPage = 2;
+  const itemsPerPage = 10;
 
   const getSingleCategory = useGetCategory(search || "Crop Cultivation");
 
@@ -42,6 +43,10 @@ export default function Blogs() {
 
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
+  };
+
+  const handelMenuClick = (href: string) => {
+    router.push(`${href}`);
   };
 
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -110,7 +115,14 @@ export default function Blogs() {
                 {blog.author || "unknown"} , {blog.pubDate}
               </p>
 
-              <Button className="rounded-full hover:bg-transparent hover:border hover:border-primary transition-all duration-300 mt-6 hover:text-black dark:text-white">
+              <Button
+                onClick={() =>
+                  handelMenuClick(
+                    `/blog-details?category=${blog?.categoryName}&blog=${blog?.itemTitle}`
+                  )
+                }
+                className="rounded-full hover:bg-transparent hover:border hover:border-primary transition-all duration-300 mt-6 hover:text-black dark:text-white"
+              >
                 Read More
               </Button>
             </div>

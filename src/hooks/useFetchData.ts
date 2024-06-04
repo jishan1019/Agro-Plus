@@ -17,10 +17,10 @@ export const useGetAllBlogsInCategory = (
 
 export const useGetSingleBlogsInCategory = (
   blogsJsonPosition: number,
-  categoryName: string
+  itemName: string
 ): TBlog | undefined => {
   const blogs = Data?.blogsData?.[blogsJsonPosition];
-  const blog = blogs?.find((item) => item?.categoryName === categoryName);
+  const blog = blogs?.find((item) => item?.itemTitle === itemName);
 
   return blog;
 };

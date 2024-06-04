@@ -5,11 +5,11 @@ export const FooterQuickLink = [
   },
   {
     name: "Blogs",
-    href: "/contact",
+    href: "#",
   },
   {
     name: "Category",
-    href: "/",
+    href: "#",
   },
 ];
 
