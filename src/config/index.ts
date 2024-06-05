@@ -7,6 +7,7 @@ import {
   description,
   keywords,
   contactEmail,
+  policyIssueDate,
 } from "./site-config";
 
 export const Config = {
@@ -19,4 +20,5 @@ export const Config = {
   description,
   keywords,
   contactEmail,
+  policyIssueDate,
 };

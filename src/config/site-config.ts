@@ -22,3 +22,5 @@ export const keywords = [
 ];
 
 export const contactEmail = "s@gmail.com";
+
+export const policyIssueDate = "2023-05-08";
